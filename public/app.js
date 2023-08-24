@@ -15,8 +15,8 @@ usernameInput.addEventListener('change', () => {
 
 messageInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && !event.shiftKey) {
-      event.preventDefault(); // Prevent newline from being entered in the textarea
-      sendButton.click(); // Trigger the send button's click event
+      event.preventDefault(); 
+      sendButton.click();
     }
   });
   
