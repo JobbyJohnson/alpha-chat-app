@@ -9,16 +9,16 @@ const io = socketIo(server);
 app.use(express.static(__dirname + '/public'));
 
 io.on('connection', (socket) => {
-  console.log('A user connected');
-
-  socket.on('message', (data) => {
-    io.emit('message', data); // Broadcast the message to all connected clients
+    console.log('A user connected');
+  
+    socket.on('message', (data) => {
+      io.emit('message', data); 
+    });
+  
+    socket.on('disconnect', () => {
+      console.log('A user disconnected');
+    });
   });
-
-  socket.on('disconnect', () => {
-    console.log('A user disconnected');
-  });
-});
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
